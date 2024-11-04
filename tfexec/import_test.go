@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestImportCmd(t *testing.T) {
@@ -29,7 +29,6 @@ func TestImportCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"import",
-			"-no-color",
 			"-input=false",
 			"-lock-timeout=0s",
 			"-lock=true",
@@ -56,7 +55,6 @@ func TestImportCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"import",
-			"-no-color",
 			"-input=false",
 			"-backup=testbackup",
 			"-lock-timeout=200s",

@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestDestroyCmd(t *testing.T) {
@@ -29,7 +29,6 @@ func TestDestroyCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"destroy",
-			"-no-color",
 			"-auto-approve",
 			"-input=false",
 			"-lock-timeout=0s",
@@ -47,7 +46,6 @@ func TestDestroyCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"destroy",
-			"-no-color",
 			"-auto-approve",
 			"-input=false",
 			"-backup=testbackup",
@@ -86,7 +84,6 @@ func TestDestroyJSONCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"destroy",
-			"-no-color",
 			"-auto-approve",
 			"-input=false",
 			"-lock-timeout=0s",
@@ -105,7 +102,6 @@ func TestDestroyJSONCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"destroy",
-			"-no-color",
 			"-auto-approve",
 			"-input=false",
 			"-backup=testbackup",

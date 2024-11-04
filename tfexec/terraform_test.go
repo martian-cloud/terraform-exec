@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 var tfCache *testutil.TFCache
@@ -119,7 +119,6 @@ func TestSetLog(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -156,7 +155,6 @@ func TestSetLog(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -193,7 +191,6 @@ func TestSetLog(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -261,7 +258,6 @@ func TestSetLogCore(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -298,7 +294,6 @@ func TestSetLogCore(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -335,7 +330,6 @@ func TestSetLogCore(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -377,7 +371,6 @@ func TestSetLogPath(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -408,7 +401,6 @@ func TestSetLogPath(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -457,7 +449,6 @@ func TestSetLogPath(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -506,7 +497,6 @@ func TestSetLogPath(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -574,7 +564,6 @@ func TestSetLogProvider(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -611,7 +600,6 @@ func TestSetLogProvider(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -648,7 +636,6 @@ func TestSetLogProvider(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -697,7 +684,6 @@ func TestCheckpointDisablePropagation_v012(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-lock-timeout=0s",
 			"-backend=true",
@@ -728,7 +714,6 @@ func TestCheckpointDisablePropagation_v012(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-lock-timeout=0s",
 			"-backend=true",
@@ -774,7 +759,6 @@ func TestCheckpointDisablePropagation_v1(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",
@@ -801,7 +785,6 @@ func TestCheckpointDisablePropagation_v1(t *testing.T) {
 
 		assertCmd(t, []string{
 			"init",
-			"-no-color",
 			"-input=false",
 			"-backend=true",
 			"-get=true",

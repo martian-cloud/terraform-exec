@@ -37,7 +37,7 @@ import (
 	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/hc-install/product"
 	"github.com/hashicorp/hc-install/releases"
-	"github.com/hashicorp/terraform-exec/tfexec"
+	"github.com/martian-cloud/terraform-exec/tfexec"
 )
 
 func main() {

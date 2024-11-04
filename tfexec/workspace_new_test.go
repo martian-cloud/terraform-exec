@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestWorkspaceNewCmd(t *testing.T) {
@@ -36,7 +36,6 @@ func TestWorkspaceNewCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"workspace", "new",
-			"-no-color",
 			"workspace-name",
 		}, nil, workspaceNewCmd)
 	})
@@ -49,7 +48,6 @@ func TestWorkspaceNewCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"workspace", "new",
-			"-no-color",
 			"-lock-timeout=200s",
 			"-lock=false",
 			"-state=teststate",

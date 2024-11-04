@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestStateMvCmd(t *testing.T) {
@@ -30,7 +30,6 @@ func TestStateMvCmd(t *testing.T) {
 		assertCmd(t, []string{
 			"state",
 			"mv",
-			"-no-color",
 			"-lock-timeout=0s",
 			"-lock=true",
 			"testsource",
@@ -47,7 +46,6 @@ func TestStateMvCmd(t *testing.T) {
 		assertCmd(t, []string{
 			"state",
 			"mv",
-			"-no-color",
 			"-backup=testbackup",
 			"-backup-out=testbackupout",
 			"-lock-timeout=200s",

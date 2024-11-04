@@ -10,7 +10,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestUpgrade013(t *testing.T) {
@@ -36,7 +36,6 @@ func TestUpgrade013(t *testing.T) {
 
 		assertCmd(t, []string{
 			"0.13upgrade",
-			"-no-color",
 			"-yes",
 		}, nil, upgrade013Cmd)
 	})
@@ -57,7 +56,6 @@ func TestUpgrade013(t *testing.T) {
 
 		assertCmd(t, []string{
 			"0.13upgrade",
-			"-no-color",
 			"-yes",
 			"upgrade013dir",
 		}, nil, upgrade013Cmd)

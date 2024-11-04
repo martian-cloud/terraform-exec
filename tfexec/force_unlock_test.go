@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestForceUnlockCmd(t *testing.T) {
@@ -30,7 +30,6 @@ func TestForceUnlockCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"force-unlock",
-			"-no-color",
 			"-force",
 			"12345",
 		}, nil, forceUnlockCmd)
@@ -62,7 +61,6 @@ func TestForceUnlockCmd_pre015(t *testing.T) {
 
 		assertCmd(t, []string{
 			"force-unlock",
-			"-no-color",
 			"-force",
 			"12345",
 			"mydir",

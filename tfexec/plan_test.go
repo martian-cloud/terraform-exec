@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestPlanCmd(t *testing.T) {
@@ -29,7 +29,6 @@ func TestPlanCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"plan",
-			"-no-color",
 			"-input=false",
 			"-detailed-exitcode",
 			"-lock-timeout=0s",
@@ -62,7 +61,6 @@ func TestPlanCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"plan",
-			"-no-color",
 			"-input=false",
 			"-detailed-exitcode",
 			"-lock-timeout=22s",
@@ -91,7 +89,6 @@ func TestPlanCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"plan",
-			"-no-color",
 			"-input=false",
 			"-detailed-exitcode",
 			"-lock-timeout=0s",
@@ -122,7 +119,6 @@ func TestPlanJSONCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"plan",
-			"-no-color",
 			"-input=false",
 			"-detailed-exitcode",
 			"-lock-timeout=0s",
@@ -156,7 +152,6 @@ func TestPlanJSONCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"plan",
-			"-no-color",
 			"-input=false",
 			"-detailed-exitcode",
 			"-lock-timeout=22s",
@@ -198,7 +193,6 @@ func TestPlanCmd_AllowDeferral(t *testing.T) {
 
 		assertCmd(t, []string{
 			"plan",
-			"-no-color",
 			"-input=false",
 			"-detailed-exitcode",
 			"-lock-timeout=0s",
