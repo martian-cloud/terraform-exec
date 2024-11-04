@@ -29,7 +29,6 @@ func TestRefreshCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"refresh",
-			"-no-color",
 			"-input=false",
 			"-lock-timeout=0s",
 			"-lock=true",
@@ -44,7 +43,6 @@ func TestRefreshCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"refresh",
-			"-no-color",
 			"-input=false",
 			"-backup=testbackup",
 			"-lock-timeout=200s",
@@ -80,7 +78,6 @@ func TestRefreshJSONCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"refresh",
-			"-no-color",
 			"-input=false",
 			"-lock-timeout=0s",
 			"-lock=true",
@@ -96,7 +93,6 @@ func TestRefreshJSONCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"refresh",
-			"-no-color",
 			"-input=false",
 			"-backup=testbackup",
 			"-lock-timeout=200s",

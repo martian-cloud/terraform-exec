@@ -47,7 +47,6 @@ func TestApplyCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"apply",
-			"-no-color",
 			"-auto-approve",
 			"-input=false",
 			"-backup=testbackup",
@@ -80,7 +79,6 @@ func TestApplyCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"apply",
-			"-no-color",
 			"-auto-approve",
 			"-input=false",
 			"-lock=true",
@@ -127,7 +125,6 @@ func TestApplyJSONCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"apply",
-			"-no-color",
 			"-auto-approve",
 			"-input=false",
 			"-backup=testbackup",
@@ -172,7 +169,6 @@ func TestApplyCmd_AllowDeferral(t *testing.T) {
 
 		assertCmd(t, []string{
 			"apply",
-			"-no-color",
 			"-auto-approve",
 			"-input=false",
 			"-lock=true",

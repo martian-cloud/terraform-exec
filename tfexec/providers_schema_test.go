@@ -27,6 +27,5 @@ func TestProvidersSchemaCmd(t *testing.T) {
 		"providers",
 		"schema",
 		"-json",
-		"-no-color",
 	}, nil, schemaCmd)
 }

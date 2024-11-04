@@ -123,7 +123,7 @@ func (tf *Terraform) initCmd(ctx context.Context, opts ...InitOption) (*exec.Cmd
 		o.configureInit(&c)
 	}
 
-	args := []string{"init", "-no-color", "-input=false"}
+	args := []string{"init", "-input=false"}
 
 	// string opts: only pass if set
 	if c.fromModule != "" {

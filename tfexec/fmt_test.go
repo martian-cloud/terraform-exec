@@ -34,7 +34,6 @@ func TestFormatCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"fmt",
-			"-no-color",
 		}, nil, fmtCmd)
 	})
 
@@ -49,7 +48,6 @@ func TestFormatCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"fmt",
-			"-no-color",
 			"string1",
 			"string2",
 			"-recursive",

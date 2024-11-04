@@ -36,6 +36,8 @@ const (
 
 	varEnvVarPrefix    = "TF_VAR_"
 	cliArgEnvVarPrefix = "TF_CLI_ARGS_"
+
+	noColorFlag = "-no-color"
 )
 
 var prohibitedEnvVars = []string{
@@ -183,6 +185,10 @@ func (tf *Terraform) buildEnv(mergeEnv map[string]string) []string {
 }
 
 func (tf *Terraform) buildTerraformCmd(ctx context.Context, mergeEnv map[string]string, args ...string) *exec.Cmd {
+	if !tf.colors {
+		args = addNoColorFlag(args)
+	}
+
 	cmd := exec.CommandContext(ctx, tf.execPath, args...)
 
 	cmd.Env = tf.buildEnv(mergeEnv)
@@ -205,6 +211,31 @@ func (tf *Terraform) runTerraformCmdJSON(ctx context.Context, cmd *exec.Cmd, v i
 	dec := json.NewDecoder(&outbuf)
 	dec.UseNumber()
 	return dec.Decode(v)
+}
+
+func addNoColorFlag(args []string) []string {
+	flagIndex := 0
+	for i, a := range args {
+		if a == noColorFlag {
+			// return here since flag is already set
+			return args
+		}
+
+		if flagIndex == 0 && strings.HasPrefix(a, "-") {
+			flagIndex = i
+		}
+	}
+
+	if flagIndex == 0 {
+		// cmd doesn't have any flags so just append the noColorFlag
+		return append(args, noColorFlag)
+	}
+
+	// insert noColorFlag before the first flag
+	args = append(args[:flagIndex+1], args[flagIndex:]...)
+	args[flagIndex] = noColorFlag
+
+	return args
 }
 
 // mergeUserAgent does some minor deduplication to ensure we aren't

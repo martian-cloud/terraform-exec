@@ -26,7 +26,6 @@ func TestOutputCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"output",
-			"-no-color",
 			"-json",
 		}, nil, outputCmd)
 	})
@@ -37,7 +36,6 @@ func TestOutputCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"output",
-			"-no-color",
 			"-json",
 			"-state=teststate",
 		}, nil, outputCmd)

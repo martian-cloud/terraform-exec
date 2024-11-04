@@ -54,6 +54,7 @@ type Terraform struct {
 	stdout io.Writer
 	stderr io.Writer
 	logger printfer
+	colors bool
 
 	// TF_LOG environment variable, defaults to TRACE if logPath is set.
 	log string
@@ -95,6 +96,7 @@ func NewTerraform(workingDir string, execPath string) (*Terraform, error) {
 		workingDir: workingDir,
 		env:        nil, // explicit nil means copy os.Environ
 		logger:     log.New(ioutil.Discard, "", 0),
+		colors:     false,
 	}
 
 	return &tf, nil
@@ -214,6 +216,12 @@ func (tf *Terraform) SetSkipProviderVerify(skip bool) error {
 	}
 	tf.skipProviderVerify = skip
 	return nil
+}
+
+// SetColor enables ansi colors for
+// Terraform CLI execution.
+func (tf *Terraform) SetColor(c bool) {
+	tf.colors = c
 }
 
 // WorkingDir returns the working directory for Terraform.

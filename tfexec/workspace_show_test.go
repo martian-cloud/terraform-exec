@@ -29,6 +29,5 @@ func TestWorkspaceShowCmd_v1(t *testing.T) {
 	assertCmd(t, []string{
 		"workspace",
 		"show",
-		"-no-color",
 	}, map[string]string{}, cmd)
 }
