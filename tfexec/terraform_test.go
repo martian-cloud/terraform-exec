@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 var tfCache *testutil.TFCache
