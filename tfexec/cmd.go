@@ -231,11 +231,8 @@ func addNoColorFlag(args []string) []string {
 		return append(args, noColorFlag)
 	}
 
-	// insert noColorFlag before the first flag
-	args = append(args[:flagIndex+1], args[flagIndex:]...)
-	args[flagIndex] = noColorFlag
-
-	return args
+	// insert flag
+	return append(args[:flagIndex], append([]string{noColorFlag}, args[flagIndex:]...)...)
 }
 
 // mergeUserAgent does some minor deduplication to ensure we aren't
