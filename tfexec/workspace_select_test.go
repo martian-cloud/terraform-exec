@@ -7,10 +7,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
+	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
 )
 
-func TestWorkspaceDeleteCmd(t *testing.T) {
+func TestWorkspaceSelectCmd(t *testing.T) {
 	tf, err := NewTerraform(t.TempDir(), tfVersion(t, testutil.Latest_v1))
 	if err != nil {
 		t.Fatal(err)
@@ -20,37 +20,20 @@ func TestWorkspaceDeleteCmd(t *testing.T) {
 	tf.SetEnv(map[string]string{})
 
 	t.Run("defaults", func(t *testing.T) {
-		workspaceDeleteCmd, err := tf.workspaceDeleteCmd(context.Background(), "workspace-name")
+		workspaceSelectCmd, err := tf.workspaceSelectCmd(context.Background(), "workspace-name")
 		if err != nil {
 			t.Fatal(err)
 		}
 
 		assertCmd(t, []string{
-			"workspace", "delete",
+			"workspace", "select",
+			"-no-color",
 			"workspace-name",
-		}, nil, workspaceDeleteCmd)
-	})
-
-	t.Run("override all defaults", func(t *testing.T) {
-		workspaceDeleteCmd, err := tf.workspaceDeleteCmd(context.Background(), "workspace-name",
-			LockTimeout("200s"),
-			Force(true),
-			Lock(false))
-		if err != nil {
-			t.Fatal(err)
-		}
-
-		assertCmd(t, []string{
-			"workspace", "delete",
-			"-force",
-			"-lock-timeout=200s",
-			"-lock=false",
-			"workspace-name",
-		}, nil, workspaceDeleteCmd)
+		}, nil, workspaceSelectCmd)
 	})
 
 	t.Run("reattach config", func(t *testing.T) {
-		workspaceDeleteCmd, err := tf.workspaceDeleteCmd(context.Background(), "workspace-name", Reattach(map[string]ReattachConfig{
+		workspaceSelectCmd, err := tf.workspaceSelectCmd(context.Background(), "workspace-name", Reattach(map[string]ReattachConfig{
 			"registry.terraform.io/hashicorp/examplecloud": {
 				Protocol:        "grpc",
 				ProtocolVersion: 6,
@@ -67,11 +50,11 @@ func TestWorkspaceDeleteCmd(t *testing.T) {
 		}
 
 		assertCmd(t, []string{
-			"workspace", "delete",
+			"workspace", "select",
 			"-no-color",
 			"workspace-name",
 		}, map[string]string{
 			"TF_REATTACH_PROVIDERS": `{"registry.terraform.io/hashicorp/examplecloud":{"Protocol":"grpc","ProtocolVersion":6,"Pid":1234,"Test":true,"Addr":{"Network":"unix","String":"/fake_folder/T/plugin123"}}}`,
-		}, workspaceDeleteCmd)
+		}, workspaceSelectCmd)
 	})
 }
