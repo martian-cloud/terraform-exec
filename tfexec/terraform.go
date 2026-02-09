@@ -251,7 +251,6 @@ func (tf *Terraform) SetWaitDelay(delay time.Duration) error {
 func (tf *Terraform) SetEnableLegacyPipeClosing(enabled bool) error {
 	tf.enableLegacyPipeClosing = enabled
 	return nil
->>>>>>> upstream/main
 }
 
 // WorkingDir returns the working directory for Terraform.
