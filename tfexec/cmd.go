@@ -17,7 +17,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/hashicorp/terraform-exec/internal/version"
+	"github.com/martian-cloud/terraform-exec/internal/version"
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
