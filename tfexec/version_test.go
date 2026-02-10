@@ -16,7 +16,7 @@ import (
 	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/hc-install/product"
 	"github.com/hashicorp/hc-install/releases"
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func mustVersion(t *testing.T, s string) *version.Version {

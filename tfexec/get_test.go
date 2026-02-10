@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestGetCmd(t *testing.T) {
@@ -29,7 +29,6 @@ func TestGetCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"get",
-			"-no-color",
 			"-update=false",
 		}, nil, getCmd)
 	})

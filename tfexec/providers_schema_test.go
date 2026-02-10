@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestProvidersSchemaCmd(t *testing.T) {
@@ -27,6 +27,5 @@ func TestProvidersSchemaCmd(t *testing.T) {
 		"providers",
 		"schema",
 		"-json",
-		"-no-color",
 	}, nil, schemaCmd)
 }

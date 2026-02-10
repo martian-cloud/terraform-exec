@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestOutputCmd(t *testing.T) {
@@ -26,7 +26,6 @@ func TestOutputCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"output",
-			"-no-color",
 			"-json",
 		}, nil, outputCmd)
 	})
@@ -37,7 +36,6 @@ func TestOutputCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"output",
-			"-no-color",
 			"-json",
 			"-state=teststate",
 		}, nil, outputCmd)

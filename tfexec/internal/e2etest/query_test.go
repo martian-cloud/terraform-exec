@@ -10,8 +10,8 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/hashicorp/go-version"
-	"github.com/hashicorp/terraform-exec/tfexec"
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 	tfjson "github.com/hashicorp/terraform-json"
 )
 

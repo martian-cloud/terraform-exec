@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestUntaintCmd(t *testing.T) {
@@ -26,7 +26,6 @@ func TestUntaintCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"untaint",
-			"-no-color",
 			"-lock=true",
 			"aws_instance.foo",
 		}, nil, untaintCmd)
@@ -41,7 +40,6 @@ func TestUntaintCmd(t *testing.T) {
 
 		assertCmd(t, []string{
 			"untaint",
-			"-no-color",
 			"-lock-timeout=200s",
 			"-state=teststate",
 			"-lock=false",

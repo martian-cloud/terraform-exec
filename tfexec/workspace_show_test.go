@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hashicorp/terraform-exec/tfexec/internal/testutil"
+	"github.com/martian-cloud/terraform-exec/tfexec/internal/testutil"
 )
 
 func TestWorkspaceShowCmd_v1(t *testing.T) {
@@ -30,7 +30,6 @@ func TestWorkspaceShowCmd_v1(t *testing.T) {
 		assertCmd(t, []string{
 			"workspace",
 			"show",
-			"-no-color",
 		}, nil, cmd)
 	})
 
@@ -54,9 +53,9 @@ func TestWorkspaceShowCmd_v1(t *testing.T) {
 		assertCmd(t, []string{
 			"workspace",
 			"show",
-			"-no-color",
 		}, map[string]string{
 			"TF_REATTACH_PROVIDERS": `{"registry.terraform.io/hashicorp/examplecloud":{"Protocol":"grpc","ProtocolVersion":6,"Pid":1234,"Test":true,"Addr":{"Network":"unix","String":"/fake_folder/T/plugin123"}}}`,
 		}, cmd)
 	})
+}
 }
