@@ -252,7 +252,6 @@ func (tf *Terraform) SetEnableLegacyPipeClosing(enabled bool) error {
 func (tf *Terraform) SetColor(c bool) {
 	tf.colors = c
 }
-}
 
 // WorkingDir returns the working directory for Terraform.
 func (tf *Terraform) WorkingDir() string {

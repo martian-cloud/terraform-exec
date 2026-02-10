@@ -65,4 +65,3 @@ func (tf *Terraform) workspaceShowCmd(ctx context.Context, opts ...WorkspaceShow
 
 	return tf.buildTerraformCmd(ctx, mergeEnv, "workspace", "show"), nil
 }
-}

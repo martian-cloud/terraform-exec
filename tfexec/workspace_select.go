@@ -50,4 +50,3 @@ func (tf *Terraform) workspaceSelectCmd(ctx context.Context, workspace string, o
 
 	return tf.buildTerraformCmd(ctx, mergeEnv, "workspace", "select", workspace), nil
 }
-}

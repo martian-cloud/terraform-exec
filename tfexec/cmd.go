@@ -320,7 +320,6 @@ func addNoColorFlag(args []string) []string {
 	// insert flag
 	return append(args[:flagIndex], append([]string{noColorFlag}, args[flagIndex:]...)...)
 }
-}
 
 // mergeUserAgent does some minor deduplication to ensure we aren't
 // just using the same append string over and over.
